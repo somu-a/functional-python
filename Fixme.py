@@ -2,17 +2,16 @@
 '''
 Your solution for each function should be only a single line long.
 In particular, you may not use any loops when implementing these functions;
-instead, you must use either the map and filter functions or list comprehensions.
+instead, use either the map and filter functions or list comprehensions.
 '''
+
 
 def evens(n):
     '''
     Returns a list of even numbers from 0 to n inclusive.
     '''
-    return (x for x in range(n) if x%2==0)
 
-
-
+    return(list(num for num in range(n) if num % 2 == 0))
 
     '''
     >>> evens(10)
@@ -30,9 +29,10 @@ def evens(n):
 
 def threes(n):
     '''
-    Returns a list of all numbers from 0 to n inclusive that contain the digit 3.
+    Returns a list of all numbers from 0 to n inclusive that
+    contain the digit 3.
     '''
-    return(x for x in range(n) if "3" in str (x)) 
+    return(list(num for num in range(n) if "3" in str(num)))
     '''
     >>> threes(2)
     []
@@ -49,13 +49,12 @@ def threes(n):
 
 def small_words(text):
     '''
-    Returns a list of all words in the input text that are less than 4 characters long.
+    Returns a list of all words in the input text
+    that are less than 4 characters long.
 
     HINT:
     Recall that text.split() converts the text variable into a list of words.
 
-    '''
-    '''
     >>> small_words('this is a simple test case')
     ['this', 'is', 'a', 'test', 'case']
     >>> small_words('really enormous words')
@@ -65,7 +64,7 @@ def small_words(text):
     >>> small_words('a big word is bad')
     ['a', 'big', 'word', 'is', 'bad']
     '''
-    return (word for word in text.split() if len(word)<=4)
+    return(list(word for word in text.split() if len(word) <= 4))
 
 
 def squares(n):
@@ -83,11 +82,13 @@ def squares(n):
     [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
     '''
 
-    return (number **2 for number in range(n)) 
+    return(list(num ** 2 for num in range(1, n + 1)))
+
 
 def lengths(strings):
     '''
-    Given a list of strings, returns a list of the lengths of the corresponding strings.
+    Given a list of strings, returns a list of the lengths of
+    the corresponding strings.
 
     >>> lengths([])
     []
@@ -97,4 +98,4 @@ def lengths(strings):
     [4, 2, 1, 4]
     '''
 
-    return (len(word) for word in strings)
+    return(list(len(word) for word in strings))
