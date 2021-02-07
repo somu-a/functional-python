@@ -8,7 +8,13 @@ instead, you must use either the map and filter functions or list comprehensions
 def evens(n):
     '''
     Returns a list of even numbers from 0 to n inclusive.
+    '''
+    return (x for x in range(n) if x%2==0)
 
+
+
+
+    '''
     >>> evens(10)
     [0, 2, 4, 6, 8, 10]
     >>> evens(11)
@@ -25,7 +31,9 @@ def evens(n):
 def threes(n):
     '''
     Returns a list of all numbers from 0 to n inclusive that contain the digit 3.
-
+    '''
+    return(x for x in range(n) if "3" in str (x)) 
+    '''
     >>> threes(2)
     []
     >>> threes(3)
@@ -46,6 +54,8 @@ def small_words(text):
     HINT:
     Recall that text.split() converts the text variable into a list of words.
 
+    '''
+    '''
     >>> small_words('this is a simple test case')
     ['this', 'is', 'a', 'test', 'case']
     >>> small_words('really enormous words')
@@ -55,7 +65,7 @@ def small_words(text):
     >>> small_words('a big word is bad')
     ['a', 'big', 'word', 'is', 'bad']
     '''
-    return [ word for word in text.split() if len(word)<=4 ]
+    return (word for word in text.split() if len(word)<=4)
 
 
 def squares(n):
@@ -73,6 +83,7 @@ def squares(n):
     [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
     '''
 
+    return (number **2 for number in range(n)) 
 
 def lengths(strings):
     '''
@@ -85,3 +96,5 @@ def lengths(strings):
     >>> lengths(['this','is','a','test'])
     [4, 2, 1, 4]
     '''
+
+    return (len(word) for word in strings)
